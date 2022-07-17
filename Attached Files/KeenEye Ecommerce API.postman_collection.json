@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "e38b645a-5c48-47a9-8c40-e2227d472e42",
+		"name": "KeenEye Ecommerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"thilinaakalanka\",\r\n  \"password\": \"TempPassword\",\r\n  \"email\": \"alwisthilina2@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/User",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"thilinaakalanka\",\r\n  \"password\": \"TempPassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRoaWxpbmFha2FsYW5rYSIsIm5iZiI6MTY1ODA3MTQ5NiwiZXhwIjoxNjU4Njc2Mjk2LCJpYXQiOjE2NTgwNzE0OTZ9.H6is73AjQ4aBy17r2XN66I0hW9vYtVYDlKEH2-VDdtU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"TempPassword23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/User/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"User",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5OTcxNzYsImV4cCI6MTY1Nzk5NzIwNiwiaWF0IjoxNjU3OTk3MTc2fQ.WWlBd4-fPIaQW4CfuSxfwNRWBsIk9muO6eC_lhQ4OWY\",\r\n    \"refreshToken\": \"STvt8rN3J6Lv9R/FXNQIgZQFQVPZwh8RnJdChDDGTnk=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/auth/refresh",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/user/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRoaWxpbmFha2FsYW5rYSIsIm5iZiI6MTY1ODA2NzE5MiwiZXhwIjoxNjU4NjcxOTkyLCJpYXQiOjE2NTgwNjcxOTJ9.OkQfS6_hGYfAtb87e3MB-oeuWypDXiMi0JVJ0UMu9CE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/user/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/akala/Downloads/IMG_8051.jpg"
+						},
+						{
+							"key": "category",
+							"value": "Apple",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "iPhone X",
+							"type": "text"
+						},
+						{
+							"key": "discountRate",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "minimumQty",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/Products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"Products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/akala/Downloads/IMG_8051.jpg"
+						},
+						{
+							"key": "category",
+							"value": "Apple",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "iPhone X",
+							"type": "text"
+						},
+						{
+							"key": "discountRate",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "minimumQty",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/Products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"Products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/Products/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"Products",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTgwNjU4OTMsImV4cCI6MTY1ODY3MDY5MywiaWF0IjoxNjU4MDY1ODkzfQ.d7WjPmUYwhRE84k5JKIjF75QQK4pqayhm82SC-WVfZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRoaWxpbmEiLCJuYmYiOjE2NTc5MTk5MTgsImV4cCI6MTY1ODUyNDcxOCwiaWF0IjoxNjU3OTE5OTE4fQ.NXmZqAA24HGwnrtB46fs0xwPpLNvC0U7BaiPB6p1eoI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44328/api/Products/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"Products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
